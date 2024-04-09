@@ -2,6 +2,10 @@
 
 ## Introduce Page
 
+## Project Topic
+
+A Web Application for Psychotherapy Art Therapy Platform for Adult ADHD Patients
+
 ### Main
 
 ![main page](https://github.com/42-PINTING/.github/blob/main/PintingPageImg/mainPage.png?raw=true)
