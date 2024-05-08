@@ -3,7 +3,6 @@
 ## Introduce Page
 
 ## Project Topic
-
 A Web Application for Psychotherapy Art Therapy Platform for Adult ADHD Patients
 
 ### Main
@@ -32,6 +31,18 @@ A Web Application for Psychotherapy Art Therapy Platform for Adult ADHD Patients
 ![profile](https://github.com/42-PINTING/.github/blob/main/PintingPageImg/profilePage.png?raw=true)
 ![frofile](https://github.com/42-PINTING/.github/blob/main/PintingPageImg/profileFriend.png?raw=true)
 
+<details>
+<summary>domain define</summary>
+<div markdown="1">
+<img src='https://github.com/42-PINTING/.github/blob/main/PintingPageImg/domain_1.png?raw=true' width=600 />
+<br>
+<img src='https://github.com/42-PINTING/.github/blob/main/PintingPageImg/domain_2.png?raw=true' width=600 />
+<br>
+<img src='https://github.com/42-PINTING/.github/blob/main/PintingPageImg/domain_3.png?raw=true' width=600 />
+<br>
+<img src='https://github.com/42-PINTING/.github/blob/main/PintingPageImg/domain_4.png?raw=true' width=600 />
+</div>
+</details>
 <!--
 🙋‍♀️ 짧은 소개 - 여러분의 조직은 무엇에 대한 것인가요?
 여러분의 조직이 무엇을 하고, 어떤 목표나 비전을 가지고 있는지에 대한 간략한 설명입니다. 조직의 핵심 가치와 임무를 공유하여 사람들이 여러분의 조직에 대해 더 잘 이해할 수 있게 합니다.
