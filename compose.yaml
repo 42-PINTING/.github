@@ -3,7 +3,7 @@ version: "3"
 services:
   python:
     container_name: mkdocs
-    image: python:3.13.0b1-alpine3.20
+    image: python:3.12.3-alpine3.19
     volumes:
       - ./:/home
     working_dir: /home/Pinting-Docs
