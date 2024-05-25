@@ -1,0 +1,23 @@
+site_name: Pinting
+nav:
+  - Home: index.md
+  - architecture: 
+    - 'DDD 설계': 'architecture/DDD'
+  - Scrum:
+    - 'index': 'scrums/scrum_0.md'
+    - '1주차': 'scrums/scrum_1.md'
+    - '2주차': 'scrums/scrum_2.md'
+    - '3주차': 'scrums/scrum_3.md'
+    - '4주차': 'scrums/scrum_4.md'
+    - '5주차': 'scrums/scrum_5.md'
+    - '6주차': 'scrums/scrum_6.md'
+    - '7주차': 'scrums/scrum_7.md'
+  - Sprint: 
+    - 'index': 'sprints/sprint_0.md'
+    - '1회': 'sprints/sprint_1.md'
+    - '2회': 'sprints/sprint_2.md'
+    - '3회': 'sprints/sprint_3.md'
+    - '4회': 'sprints/sprint_4.md'
+    - '5회': 'sprints/sprint_5.md'
+    - '6회': 'sprints/sprint_6.md'
+    - '7회': 'sprints/sprint_7.md'
