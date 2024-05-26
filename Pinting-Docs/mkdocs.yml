@@ -2,7 +2,7 @@ site_name: Pinting
 nav:
   - Home: index.md
   - architecture: 
-    - 'DDD 설계': 'architecture/DDD'
+    - 'DDD 설계': 'architecture/DDD.md'
   - Scrum:
     - 'index': 'scrums/scrum_0.md'
     - '2024.05.17.': 'scrums/2024.05.17.md'
@@ -21,6 +21,7 @@ nav:
     - '5회': 'sprints/sprint_5.md'
     - '6회': 'sprints/sprint_6.md'
     - '7회': 'sprints/sprint_7.md'
+    - '8회': 'sprints/sprint_8.md'
 
 theme:
   name: readthedocs
