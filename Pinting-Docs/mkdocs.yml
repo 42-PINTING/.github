@@ -21,3 +21,6 @@ nav:
     - '5회': 'sprints/sprint_5.md'
     - '6회': 'sprints/sprint_6.md'
     - '7회': 'sprints/sprint_7.md'
+
+theme:
+  name: readthedocs
