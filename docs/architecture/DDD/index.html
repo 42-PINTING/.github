@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>DDD 설계 - Pinting</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "DDD \uc124\uacc4";
+        var mkdocs_page_input_path = "architecture/DDD.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Pinting
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">architecture</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">DDD 설계</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-tell-the-story">1. 도메인 이벤트 정의 / Tell the story</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-process-grouping">2. process grouping</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-command">3. command 정의</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-trigger">4. trigger 정의</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-aggregate">5. Aggregate 정의</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6">6. 바운디드 컨텍스트 설정 / 컨텍스트 맵 작성</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Scrum</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/scrum_0/">index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.17/">2024.05.17.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.18/">2024.05.18.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.19/">2024.05.19.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.20/">2024.05.20.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.21/">2024.05.21.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.22/">2024.05.22.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.23/">2024.05.23.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.24/">2024.05.24.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.25/">2024.05.25.</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../scrums/2024.05.26/">2024.05.26.</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sprint</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_0/">index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_1/">1회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_2/">2회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_3/">3회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_4/">4회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_5/">5회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_6/">6회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_7/">7회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sprints/sprint_8/">8회</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Pinting</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">architecture</li>
+      <li class="breadcrumb-item active">DDD 설계</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ddddomain-driven-design">DDD(Domain Driven Design)</h1>
+<p><code>Pinting</code>은 서비스의 유연성이 높은 MSA를 기반으로 설계되었습니다.</p>
+<p>다음은 MSA의 구축을 위한 도메인 주도 설계 과정입니다.</p>
+<h2 id="1-tell-the-story">1. 도메인 이벤트 정의 / Tell the story</h2>
+<blockquote>
+<p>비즈니스 도메인내에 발생하는 모든 이벤트를 과거형으로 기술하는 과정</p>
+</blockquote>
+<ul>
+<li>Actor의 Action 결과로 발생하는 이벤트를 구성원들과 논의하며 보드에 추가(노란색)</li>
+<li>도출된 이벤트들을 통해 흐름을 파악하고 이벤트를 추가/수정/제거</li>
+</ul>
+<p><img width="752" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/aa4a5be1-53cf-4b9b-8b58-cf76ba7233a3" width="500"></p>
+<h2 id="2-process-grouping">2. process grouping</h2>
+<blockquote>
+<p>이벤트들을 비즈니스 업무 프로세스로 그룹핑하는 과정</p>
+</blockquote>
+<ul>
+<li>이벤트들을 비즈니스 프로세스를 기준으로 그룹핑</li>
+<li>그룹핑 후 필요한 이벤트들을 추가</li>
+</ul>
+<p><img width="1111" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/156e3170-b700-4521-a7d7-7756e1e734c4" width="500"></p>
+<h2 id="3-command">3. command 정의</h2>
+<blockquote>
+<p>도메인 이벤트를 발생시키는 명령을 현재형으로 기술</p>
+</blockquote>
+<ul>
+<li>사용자의 행위를 명령 형태로 추가(파란색)</li>
+</ul>
+<p><img width="1258" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/99bf2632-3778-4dc2-8068-e1e782f1310f" width="500"></p>
+<h2 id="4-trigger">4. trigger 정의</h2>
+<blockquote>
+<p>명령을 일으키는 Actor와 외부 시스템, 정책을 정의</p>
+</blockquote>
+<ul>
+<li>Actor를 <code>사용자</code>와 <code>관리자</code>로 구분</li>
+<li>로그인 시스템은 OAuth2.0을 사용할 예정이기 때문에 외부 시스템으로 정의(초록색)</li>
+</ul>
+<p><img width="776" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/2b903296-3910-4822-adbf-075ac82bbb81" width="500"></p>
+<h2 id="5-aggregate">5. Aggregate 정의</h2>
+<blockquote>
+<p>명령을 수행하기 위한 CRUD 데이터 객체 정의</p>
+</blockquote>
+<ul>
+<li>명령을 수행하기 위한 데이터를 도출(보라색)하고 기존 명확하지 않던 이벤트를 프로세스 그룹에 맞게 수정</li>
+<li>신고 접수라는 rule을 통해 <code>신고 관리</code>로 데이터가 이어지므로, 데이터 흐름 정의(연두색)</li>
+</ul>
+<p><img width="1242" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/bad90b5d-4fc4-462f-bc53-f74a94e29340" width="500"></p>
+<h2 id="6">6. 바운디드 컨텍스트 설정 / 컨텍스트 맵 작성</h2>
+<blockquote>
+<p>바운디드 컨텍스트를 정의하고, 비즈니스 목적별로 그룹핑
+바운디드 컨텍스트간의 관계를 정의</p>
+</blockquote>
+<ul>
+<li>게시판과 댓글을 커뮤니티라는 비즈니스 목적으로 그룹화</li>
+<li>각각의 그룹간의 관계(데이터의 흐름)을 정의</li>
+</ul>
+<p><img width="570" alt="image" src="https://github.com/42-PINTING/.github/assets/99523863/f61ca472-0975-4926-ab08-b1f7d8cbacd9" width="500"></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../scrums/scrum_0/" class="btn btn-neutral float-right" title="index">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../scrums/scrum_0/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
