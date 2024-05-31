@@ -6,8 +6,8 @@ services:
     build: ./Pinting-Docs
     pull_policy: never
     volumes:
-      - ./Pinting-Docs:/home
-    working_dir: /home
+      - ./:/home
+    working_dir: /home/Pinting-Docs
     ports:
       - 8888:8888
 
