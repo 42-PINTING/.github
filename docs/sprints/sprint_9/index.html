@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>7회 - Pinting</title>
+    <title>9회 - Pinting</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "7\ud68c";
-        var mkdocs_page_input_path = "sprints/sprint_7.md";
+        var mkdocs_page_name = "9\ud68c";
+        var mkdocs_page_input_path = "sprints/sprint_9.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -87,15 +87,11 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../sprint_0/">index</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sprint_9/">9회</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sprint_8/">8회</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">7회</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">9회</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">회의안건</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">회의 안건</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">진행상황 공유</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">진행 상황 공유</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#_3">백</a>
     </li>
@@ -103,21 +99,35 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">오라클 클라우드</a>
+    <li class="toctree-l3"><a class="reference internal" href="#ssr">SSR 여부</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">마일스톤</a>
+    <li class="toctree-l3"><a class="reference internal" href="#refresh">refresh 토큰 여부</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">일일 스크럼</a>
+    <li class="toctree-l3"><a class="reference internal" href="#scrum">scrum 템플릿</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#env">env 정책 공유</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erd">ERD 설계</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#api">로그인 / 게시판 API 명세</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">다음 스프린트 까지 할 일</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">다음 스프린트까지 할 일</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_9">다음 스프린트</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">백</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">프론트</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">다음 스프린트</a>
     </li>
         </ul>
     </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sprint_8/">8회</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sprint_7/">7회</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../sprint_6/">6회</a>
                   </li>
@@ -147,7 +157,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Sprint</li>
-      <li class="breadcrumb-item active">7회</li>
+      <li class="breadcrumb-item active">9회</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -156,115 +166,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="7-20240516">7회 (2024.05.16.)</h1>
+                <h1 id="9-20240531">9회 ( 2024.05.31)</h1>
 <hr />
-<p>참여자 : 이상원, 하주영, 원재윤, 김수환, 서정윤</p>
-<h2 id="_1">회의안건</h2>
+<p>참여자 : 하주영, 원재윤, 김수환, 서정윤</p>
+<h2 id="_1">회의 안건</h2>
 <ul>
-<li>진행상황 공유</li>
-<li>오라클 클라우드</li>
-<li>마일스톤</li>
-<li>일일 스크럼</li>
+<li>진행 상황 공유</li>
+<li>SSR 여부</li>
+<li>refresh 토큰 여부</li>
+<li>ERD 설계</li>
+<li>env 정책 공유</li>
+<li>scrum 템플릿</li>
+<li>로그인 / 게시판 API 명세</li>
 </ul>
-<h3 id="_2">진행상황 공유</h3>
+<h3 id="_2">진행 상황 공유</h3>
 <h4 id="_3">백</h4>
 <ul>
-<li>아키텍쳐 구성</li>
-<li>로그인 로직 main으로 병합</li>
-<li>정윤<ul>
-<li>자바 강의 완료</li>
-<li>스프링 강의 수강 중 (50%)</li>
-</ul>
-</li>
+<li>로그인 완료</li>
 </ul>
 <h4 id="_4">프론트</h4>
 <ul>
-<li>주영<ul>
-<li>되돌리기, 앞으로 가기 기능<ul>
-<li>리코일 세팅이 필요해서 다른 부분 먼저</li>
+<li>로그인 / 사이드 바 준비 완료<ul>
+<li>API만 있으면 동작</li>
 </ul>
 </li>
-<li>메인 페이지</li>
+<li>게시판 구현 중</li>
 </ul>
-</li>
-<li>재윤<ul>
-<li>리코일 세팅</li>
-<li>그림판 기능<ul>
-<li>ERD?</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>상원<ul>
-<li>플로우 차트 제작 중</li>
-<li>전체 레이아웃은 오늘 까지 완료</li>
-<li>이벤트 정의서</li>
-</ul>
-</li>
-</ul>
-<h3 id="_5">오라클 클라우드</h3>
+<h3 id="ssr">SSR 여부</h3>
 <ul>
-<li>오라클 클라우드 인스턴스 새로 받음<ul>
-<li>env file read me에 수정</li>
+<li>구현 상의 어려움으로 인해 CSR로만 결정.<ul>
+<li>메타데이터 SEO 구현</li>
+</ul>
+</li>
+<li>첫 페이지 로드 시 서버로 프로필 정보를 받아도록 함.<ul>
+<li><code>pinting.com/api/me</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="_6">마일스톤</h3>
+<h3 id="refresh">refresh 토큰 여부</h3>
 <ul>
-<li>1주일에 2개의 도메인<ul>
-<li>도메인 별로 마일스톤 설정</li>
-<li>그림판은 중간부터</li>
+<li>쿠키 방식에서 access와 refresh가 항상 오고간다면 의미가 없다고 결론</li>
+<li>서버가 stateless 하기 위해서 refresh를 저장하는 것 또한 반대</li>
+<li>나중에 하고 싶으면 한다.</li>
 </ul>
-</li>
-</ul>
-<pre><code>&gt; 1차 마일스톤(5월 3주차)
-    - 인증/인가, 게시판
-        - 회원가입
-        - 홈페이지
-        - 게시판
-&gt; 2차 마일스톤(5월 4주차)
-    - 댓글, 유저
-        - 게시판 댓글 기능
-        - 마이페이지
-        - 팔로우
-&gt; 3차 마일스톤(6월 1주차)
-    - 그림 관리, 신고관리
-        - 그림판 기능
-        - 그림 관리 페이지
-        - 관리자 페이지
-        - 신고 처리 페이지
-&gt; 4차 마일스톤 (6월 2주차)
-    - 스트리밍
-    - 스트리밍 페이지
-&gt; 5차 마일스톤 (6월 3주차)
-    - 마무리
-&gt; 6차 마일스톤 (6월 4주차)
-    - 어드민 페이지 확장 여부 결정
-    - 배포
-</code></pre>
-<h3 id="_7">일일 스크럼</h3>
+<h3 id="scrum">scrum 템플릿</h3>
 <ul>
-<li>매일 디스코드에 공유</li>
+<li>현행 유지 / 1주일 모으기</li>
+</ul>
+<h3 id="env">env 정책 공유</h3>
+<ul>
+<li>서브모듈 -&gt; 프라이빗 레포에서 직접 받아오도록 처리</li>
+</ul>
+<h3 id="erd">ERD 설계</h3>
+<ul>
+<li>첨부자료</li>
+</ul>
+<h3 id="api">로그인 / 게시판 API 명세</h3>
+<ul>
+<li>첨부자료</li>
 </ul>
 <hr />
-<h2 id="_8">다음 스프린트 까지 할 일</h2>
+<h2 id="_5">다음 스프린트까지 할 일</h2>
+<h3 id="_6">백</h3>
 <ul>
-<li>마일스톤에 맞춰 진행</li>
+<li>로그아웃 만들기</li>
+<li>CRUD 구현</li>
+</ul>
+<h3 id="_7">프론트</h3>
+<ul>
+<li>API 연결</li>
 </ul>
 <hr />
-<h3 id="_9">다음 스프린트</h3>
+<h3 id="_8">다음 스프린트</h3>
 <ul>
-<li>5/22 수요일 2시 강남<ul>
-<li>4시 상원</li>
-</ul>
-</li>
+<li>화요일 2시</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../sprint_8/" class="btn btn-neutral float-left" title="8회"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../sprint_6/" class="btn btn-neutral float-right" title="6회">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../sprint_0/" class="btn btn-neutral float-left" title="index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sprint_8/" class="btn btn-neutral float-right" title="8회">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -287,10 +269,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../sprint_8/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../sprint_0/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../sprint_6/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../sprint_8/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
