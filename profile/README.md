@@ -1,4 +1,6 @@
 # HELLO PINTING
+* [Detail document](https://42-pinting.github.io/.github/)
+* [figma](https://www.figma.com/design/E7c82X5rD41IoxZFSSW8XV/Pinting?node-id=229-1114)
 
 ## Introduce Page
 
@@ -46,4 +48,3 @@ A Web Application for Psychotherapy Art Therapy Platform for Adult ADHD Patients
 팀 문화나 멤버들 사이의 재미있는 사실을 공유하는 것입니다. 예를 들어, 팀원들이 아침 식사로 선호하는 음식이나, 팀 내에서 유명한 간식 등을 소개할 수 있습니다. 이는 팀의 분위기를 좀 더 친근하게 만들어 줍니다.
 -->
 
-## [figma](https://www.figma.com/design/E7c82X5rD41IoxZFSSW8XV/Pinting?node-id=229-1114)
