@@ -1,64 +1,89 @@
 import os
 import shutil
 import yaml
-from datetime import datetime
+from collections import OrderedDict
 
-def list_scrums_in_directory(directory):
+def archive_to_docs(archive_directory_path, dest_directory_path):
+    content_list = []
+    try:
+        with os.scandir(archive_directory_path) as entries:
+            for entry in entries:
+                if entry.is_file():
+                    source_file_path = os.path.join(archive_directory_path, entry.name)
+                    dest_file_path = os.path.join(dest_directory_path, entry.name)
+                    content_list.append(entry.name)
+                    print(f"{source_file_path} -> {dest_file_path}")
+                    shutil.copy(source_file_path, dest_file_path)
+    except FileNotFoundError:
+        if (os.path.exists(archive_directory_path)):
+            print(f"The directory {archive_directory_path} does not exist")
+        else: 
+            print(f"The directory {dest_file_path} does not exist") 
+    except PermissionError:
+        print(f"Permission denied to access the directory {archive_directory_path}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return content_list
+
+def list_content_in_directory(directory):
     content_list = []
     try:
         with os.scandir(directory) as entries:
             for entry in entries:
                 if entry.is_file():
-                    source_path = os.path.join(directory, entry.name)
-                    dest_path = os.path.join("/home", "scrums")
                     content_list.append(entry.name)
-                    shutil.copy(source_path, dest_path)
-                    print(f"{source_path} -> {dest_path}")
     except FileNotFoundError:
-        print(f"The directory {directory} or {dest_path} does not exist")
+        print(f"The directory {directory} does not exist")
     except PermissionError:
         print(f"Permission denied to access the directory {directory}")
     except Exception as e:
         print(f"An error occurred: {e}")
     return content_list
 
-def update_mkdocs_config(yaml, directory, section, date_format='%Y.%m.%d'):
-    try:
+def find_section(nav, section_name):
+    for item in nav:
+        if isinstance(item, dict) and section_name in item:
+            return item
+    return None
+
+def update_mkdocs_config(yaml_file, docs_directory_path, config_directory_path, section):
+    # try:
         # YAML 파일 읽기
-        with open("mkdocs.yml", 'r', encoding='utf-8') as file:
+        with open(yaml_file, 'r', encoding='utf-8') as file:
             config = yaml.safe_load(file)
 
-        files = list_files_in_directory(directory)
-
         # 디렉토리 내 파일 목록 가져오기
-        files = list_files_in_directory(directory)
+        files = list_content_in_directory(docs_directory_path)
 
         # 파일 목록을 기반으로 날짜 부분 업데이트
         file_entries = {}
         for file in files:
             file_name = os.path.splitext(file)[0]
-            try:
-                date = datetime.strptime(file_name, '%Y.%m.%d')
-                file_entries[file_name] = os.path.join(directory, file)
-            except ValueError:
-                print(f"File name '{file_name}' does not match date format '{date_format}'")
+            file_entries[file_name] = os.path.join(config_directory_path, file)
 
-        # 기존 섹션 업데이트
-        if section in config['nav']:
-            config['nav'][section] = [{file_name: file_path} for file_name, file_path in sorted(file_entries.items())]
-
+        section_item = find_section(config['nav'], section)
+        if section_item is not None:
+            reversed_file_entries = OrderedDict(reversed(list(sorted(file_entries.items()))))
+            print(reversed_file_entries)
+            section_item[section] = [{file_name: file_path} for file_name, file_path in reversed_file_entries.items()]
+        else:
+            print("there is no nav section")
         # YAML 파일 다시 쓰기
         with open(yaml_file, 'w', encoding='utf-8') as file:
             yaml.safe_dump(config, file, allow_unicode=True, sort_keys=False)
 
-        print(f"YAML file '{yaml_file}' updated successfully.")
-    except FileNotFoundError as e:
-        print(f"File not found: {e}")
-    except PermissionError:
-        print(f"Permission denied: {e}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"YAML file '{yaml}' updated successfully.")
+    # except FileNotFoundError as e:
+    #     print(f"File not found: {e}")
+    # except PermissionError:
+    #     print(f"Permission denied: {e}")
+    # except Exception as e:
+    #     print(f"An error occurred: {e}")
 
-# directory_path = '/home/scrum-archive'
-# contents_list = list_scrums_in_directory(directory_path)
-update_mkdocs_config("mkdocs.yml", "scrums", "Scrum")
+archive_path = '/home/Pinting-Docs/scrum-archive'
+docs_path = '/home/Pinting-Docs/docs/scrums'
+config_path = 'scrums'
+mkdocs_scrum_section = 'Scrum'
+
+archive_to_docs(archive_path, docs_path)
+update_mkdocs_config("mkdocs.yml", docs_path, config_path, mkdocs_scrum_section)
