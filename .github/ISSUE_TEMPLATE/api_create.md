@@ -1,6 +1,6 @@
 ---
-name: api create
-about: api를 생성
+name: API create
+about: API를 생성
 title: '[API] 00 api를 필요'
 labels: API
 assignees: ''
