@@ -3,6 +3,7 @@
 FROM python:3.12.3-alpine3.19
 
 RUN pip install --upgrade pip && \
-	pip install mkdocs
+	pip install mkdocs \
+	pyyaml
 
 CMD ["mkdocs", "serve", "-a", "0.0.0.0:8888"]

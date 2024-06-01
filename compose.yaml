@@ -10,9 +10,4 @@ services:
     working_dir: /home/Pinting-Docs
     ports:
       - 8888:8888
-
-# make dockerfile
-# RUN pip install mkdocs
-# ENTRYPOINT mkdocs serve
-
-# pip install mkdocs && mkdocs serve -a 0.0.0.0:8888
+    command: sh run.sh
