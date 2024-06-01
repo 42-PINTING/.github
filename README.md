@@ -1,3 +1,2 @@
-# .github
-PINTING의 소개 프로필
-
+# PINTING
+## 👉🏻 [DOCS](https://42-pinting.github.io/.github/)
