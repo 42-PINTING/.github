@@ -2,8 +2,13 @@ nav:
 - Home: index.md
 - architecture:
   - DDD 설계: architecture/DDD.md
+  - ERD 설계: architecture/ERD.md
 - Scrum:
   - index: scrums/index.md
+  - 2024.06.09: scrums/2024.06.09.md
+  - 2024.06.08: scrums/2024.06.08.md
+  - 2024.06.07: scrums/2024.06.07.md
+  - 2024.06.06: scrums/2024.06.06.md
   - 2024.06.05: scrums/2024.06.05.md
   - 2024.06.04: scrums/2024.06.04.md
   - 2024.06.03: scrums/2024.06.03.md
